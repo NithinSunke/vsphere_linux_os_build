@@ -34,9 +34,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     yum install git -y
     cd /tmp
-    git clone https://github.com/NithinSunke/esxi_vagrant_centos8.git
+    git clone https://github.com/NithinSunke/vsphere_linux_os_build.git
     chmod -R 777 vagrant
-    .  /tmp/esxi_vagrant_centos8/config/install_env.sh
+    .  /tmp/vsphere_linux_os_build//config/install_env.sh
     echo "******************************************************************************"
     echo "Set root and oracle password and change ownership of /u01." `date`
     echo "******************************************************************************"
@@ -50,9 +50,9 @@ Vagrant.configure("2") do |config|
     echo "modifing sshd_config file"
     echo "+++++++++++++++++++++++"
     mv /etc/ssh/sshd_config /etc/ssh/sshd_config_org
-    cp /tmp/esxi_vagrant_centos8/config/sshd_config /etc/ssh/sshd_config
+    cp /tmp/vsphere_linux_os_build//config/sshd_config /etc/ssh/sshd_config
     systemctl restart sshd
-    cd /tmp/esxi_vagrant_centos8/config
+    cd /tmp/vsphere_linux_os_build//config
     cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0_org
     echo "$(sed "s/#IPADDRESS#/$public_ip/g" ifcfg-eth0)" > /etc/sysconfig/network-scripts/ifcfg-eth0
     cd /tmp

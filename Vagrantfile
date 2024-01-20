@@ -35,8 +35,8 @@ Vagrant.configure("2") do |config|
     yum install git -y
     cd /tmp
     git clone https://github.com/NithinSunke/vsphere_linux_os_build.git
-    chmod -R 777 vagrant
-    .  /tmp/vsphere_linux_os_build//config/install_env.sh
+    chmod -R 777 sphere_linux_os_build
+    .  /tmp/vsphere_linux_os_build/config/install_env.sh
     echo "******************************************************************************"
     echo "Set root and oracle password and change ownership of /u01." `date`
     echo "******************************************************************************"
@@ -50,13 +50,14 @@ Vagrant.configure("2") do |config|
     echo "modifing sshd_config file"
     echo "+++++++++++++++++++++++"
     mv /etc/ssh/sshd_config /etc/ssh/sshd_config_org
-    cp /tmp/vsphere_linux_os_build//config/sshd_config /etc/ssh/sshd_config
+    cp /tmp/vsphere_linux_os_build/config/sshd_config /etc/ssh/sshd_config
     systemctl restart sshd
-    cd /tmp/vsphere_linux_os_build//config
+    cd /tmp/vsphere_linux_os_build/config
     cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0_org
     echo "$(sed "s/#IPADDRESS#/$public_ip/g" ifcfg-eth0)" > /etc/sysconfig/network-scripts/ifcfg-eth0
+    systemctl restart network
     cd /tmp
-    rm -rf vagrant 
+    rm -rf vsphere_linux_os_build 
     init 6
   SHELL
 end

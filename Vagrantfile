@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = var_box
   config.vm.hostname = var_vm_name
   config.vm.provider :vmware_esxi do |esxi|
-    esxi.esxi_hostname = "192.168.0.13"
+    esxi.esxi_hostname = "192.168.0.12"
     esxi.esxi_username = "nsunke"
     esxi.esxi_password = "sns#0712"
     esxi.esxi_hostport = var_esxi_hostport

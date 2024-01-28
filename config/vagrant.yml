@@ -1,6 +1,6 @@
 box: generic/centos7
-vm_name: sdsan01
-public_ip: 192.168.0.21
+vm_name: sddoc01
+public_ip: 192.168.0.22
 esxi_hostport: 22
 esxi_disk_store: VMSTORE
 guest_name: sdsan01

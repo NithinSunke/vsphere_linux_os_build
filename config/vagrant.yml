@@ -7,4 +7,4 @@ guest_name: sddoclrn
 guest_memsize: 4048
 guest_numvcpus: 2
 guest_guestos: 'centos-64'
-esxi_virtual_network: VM_PUBLIC
+esxi_virtual_network: VLAN20

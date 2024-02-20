@@ -1,4 +1,4 @@
-box: generic/centos7
+box: oel7
 vm_name: soel701
 public_ip: 192.168.3.27
 esxi_hostport: 22

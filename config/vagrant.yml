@@ -1,10 +1,10 @@
 box: oel7
-vm_name: oeldb19c2
-public_ip: 192.168.3.28
+vm_name: mylabca
+public_ip: 192.168.3.11
 esxi_hostport: 22
 esxi_disk_store: VMSTORE
-guest_name: oeldb19c2
-guest_memsize: 4048
-guest_numvcpus: 2
+guest_name: mylabca
+guest_memsize: 2048
+guest_numvcpus: 1
 guest_guestos: 'centos-64'
 esxi_virtual_network: VLAN20

@@ -1,4 +1,4 @@
-box: oel7
+box: generic/centos7
 vm_name: mylabca
 public_ip: 192.168.3.11
 esxi_hostport: 22
